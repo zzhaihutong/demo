@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    class A {
+        constructor(name) {
+            this.name = name
+        }
+        eat(food) {
+            return `${this.name}喜欢吃${food}`
+        }
+    }
+
+    //extends
+
+    class Dog extends A {
+
+        constructor(name, sy) {
+
+            super(name)// 超级 超类 父类  基类       去调用了 父类的 构造函数 的 constructor（）    
+            //要 先 super  再去定义自己的 私有属性  否则 会报错
+            this.sy = sy
+
+        }
+        walk() {
+            console.log("奔跑");
+        }
+    }
+    var dog = new Dog("狗子", "旺旺")
+
+    console.log(dog.eat("狗粮"));
+    dog.walk();
+    
+    console.log(dog);
+</script>
+
+</html>

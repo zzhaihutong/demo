@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn"></button>
+</body>
+
+<script>
+
+    /*
+        主要是为了解决跨域    src  天生就没有跨域这个说法
+
+        动态创建 script 标签 插入 页面
+
+        请求的 结果是 函数的 调用  后端会把数据 作为实参传入
+    */
+
+    function fun(res) {
+        console.log(res);
+    }
+
+    btn.onclick = function () {
+        var node = document.createElement("script")
+        node.src = "https://category.vip.com/ajax/getSuggestHotKeywords.php?callback=fun&count=10&uid=&_=1617328010847"
+        document.body.appendChild(node)
+    }
+
+
+
+
+</script>
+
+</html>

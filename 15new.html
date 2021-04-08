@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    function P(name) {
+        this.name = name
+    }
+    P.prototype.type = "人"
+
+    // var p = new P("lj")
+    // console.log(p);
+
+    var p = {}//创建一个 空对象
+
+    p.__proto__ = P.prototype // 讲空对像的  原型链 指向 构造函数的 原型对象
+
+    P.call(p, "李杰") //讲构造函数内部的 属性 定义到  空对象上
+
+    console.log(p);
+
+    // function fun (){
+    //     this.name="123"
+    // }   
+
+    // var obj={}
+
+    // fun.call(obj)
+
+    // console.log(obj);
+
+</script>
+
+</html>

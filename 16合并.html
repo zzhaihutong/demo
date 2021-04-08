@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    var obj1 = {
+        name: "123",
+        list: {
+            num: 66
+        }
+    }
+    var obj2 = {
+        age: 66,
+        name: 321
+    }
+
+    //assign  主要用于 合并对象   只能深拷贝 单层属性  如果对象内的 属性  是引用类型  则仍然存在 引用关系
+
+
+    var res = Object.assign(obj2, obj1)
+
+    obj1.name="999"
+    obj1.list.num=99
+
+    console.log(res);
+
+</script>
+
+</html>

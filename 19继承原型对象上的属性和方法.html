@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    function A() {
+        this.type = "动物"
+        this.shengyin = "嘤嘤"
+        this.speak = function () {
+            console.log(this.shengyin);
+        }
+    }
+
+    A.prototype.name = "李杰"
+
+    function C() {
+        A.call(this)//通过这种方法 只能 继承 私有属性
+    }
+
+    C.prototype.__proto__ = A.prototype
+
+    A.prototype.name="haah"
+    C.prototype.age = 66
+
+    var c = new C()
+
+    c.speak()
+
+    console.log(c);
+
+</script>
+
+</html>

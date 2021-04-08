@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box">
+        <button>-</button>
+        <button>0</button>
+        <button>+</button>
+    </div>
+    <div class="box">
+        <button>-</button>
+        <button>0</button>
+        <button>+</button>
+    </div>
+    <div class="box">
+        <button>-</button>
+        <button>0</button>
+        <button>+</button>
+    </div>
+</body>
+<script>
+
+
+    function Btn(el) {
+        this.box = el
+        this.reduce = null
+        this.num = null
+        this.add = null
+        this.x = 0
+        this.init()
+    }
+
+
+    Btn.prototype.getNode = function () {
+        this.add = this.box.children[2]
+        this.num = this.box.children[1]
+        this.reduce = this.box.children[0]
+    }
+    Btn.prototype.jia = function () {
+        this.x++
+        this.set()
+    }
+    Btn.prototype.jian = function () {
+        this.x--
+        this.set()
+    }
+    Btn.prototype.set = function () {
+        this.num.innerHTML = this.x
+    }
+    Btn.prototype.bindEvent = function () {
+        this.add.onclick = this.jia.bind(this)
+        this.reduce.onclick = this.jian.bind(this)
+    }
+    Btn.prototype.init = function () {
+        this.getNode()
+        this.bindEvent()
+    }
+
+
+    var box = document.getElementsByClassName("box")
+
+    for (let i = 0; i < box.length; i++) {
+        new Btn(box[i])
+    }
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // 在js中 万物皆对象   每当定义一个对象的时候 对象中都会 包含一些 预定义的 属性  其中 函数对像 的一个属性 就是 原型对象  prototype 普通对象 没有  该属性
+    //但是会有 __proto__ 属性
+
+    //每个函数对象 都有一个 prototype 属性 指向其  原型对象
+    // 原型对象上的  属性 还有 方法 都会被 实例对象 所继承
+
+    // function P(name) {
+    //     this.name = name
+    //     this.say = function () {
+    //         console.log(this.name);
+    //     }
+    // }
+
+    // var p = new P("李杰")
+
+    // p.say()
+
+
+
+    function P(name) {
+        this.name = name
+    }
+    P.prototype.type = "人"
+    P.prototype.say = function () {
+        //原型对象内部的 this 指向 构造函数本身
+        console.log(this.name);
+    }
+
+    var p = new P("李杰")
+
+    console.log(p);
+    p.say()
+
+
+</script>
+
+</html>

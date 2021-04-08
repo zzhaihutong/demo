@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // var obj1 = {
+    //     name: "123",
+    //     age: "23",
+    //     type: "人类"
+    // }
+    // var obj2 = {
+    //     name: "456",
+    //     age: "22",
+    //     type: "人类"
+    // }
+
+    function Gc(name, age) {
+        var x = 10
+        return {
+            name,
+            age,
+            type: "人类",
+            say() {
+                console.log(this.name, x);
+            }
+        }
+    }
+
+    var obj1 = Gc("李杰", 26)
+    var obj2 = Gc("李奥文", 15)
+    obj1.say()
+    obj2.say()
+
+    console.log(obj1);
+    console.log(obj2);
+</script>
+
+</html>

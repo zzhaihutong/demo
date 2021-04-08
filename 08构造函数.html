@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    //es5 构造函数
+
+    // function Person(name, age) {//构造函数 内部的this 指向 实例对象
+    //     this.name = name
+    //     this.age = age
+    //     this.type = "人类"
+    // }
+    // Person(1, 2) //this指向 window  往window上定义了name age type
+    // // console.log(window);
+    // var p = new Person("lijie", 22)//生成实例对象
+
+    // //每一个 实例对象 都会有一个 constructor属性 指向 它的  构造函数
+    // console.log(p.constructor.name); //   .name  是指该实例对象 构造函数的 名字
+
+    //es6 
+    class Person {
+        constructor(name, age) {
+            this.name = name
+            this.age = age
+        }
+        say() {
+            console.log(this.name);
+        }
+    }
+
+    var p = new Person("李杰", 12)
+
+    p.say()
+</script>
+
+</html>

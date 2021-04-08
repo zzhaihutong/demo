@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <button>-</button>
+        <button>0</button>
+        <button>+</button>
+    </div>
+    <div class="box">
+        <button>-</button>
+        <button>0</button>
+        <button>+</button>
+    </div>
+    <div class="box">
+        <button>-</button>
+        <button>0</button>
+        <button>+</button>
+    </div>
+    <div class="box">
+        <button>-</button>
+        <button>0</button>
+        <button>+</button>
+    </div>
+</body>
+<script>
+    // var box = document.getElementsByClassName("box")[0]
+    // var reduce = box.children[0]
+    // var num = box.children[1]
+    // var add = box.children[2]
+    // var x = 0
+    // reduce.onclick = function () {
+    //     x--
+    //     x < 0 ? x = 0 : x
+    //     num.innerHTML = x
+    // }
+    // add.onclick = function () {
+    //     x++
+    //     x > 10 ? x = 10 : x
+    //     num.innerHTML = x
+    // }
+
+    // var obj = {
+    //     box: null,
+    //     num: null,
+    //     reduce: null,
+    //     add: null,
+    //     x: 0,
+    //     getNode() {
+    //         this.box = document.getElementsByClassName("box")[0]
+    //         this.reduce = this.box.children[0]
+    //         this.num = this.box.children[1]
+    //         this.add = this.box.children[2]
+    //     },
+    //     addd() {
+    //         this.x++
+    //         if (this.x > 10) {
+    //             this.x = 10
+    //         }
+    //         this.set()
+    //     },
+    //     reducee() {
+    //         this.x--
+    //         if (this.x < 0) {
+    //             this.x = 0
+    //         }
+    //         this.set()
+    //     },
+    //     set() {
+    //         this.num.innerHTML = this.x
+    //     },
+    //     bindEvent() {
+    //         this.add.onclick = this.addd.bind(this)
+    //         this.reduce.onclick = this.reducee.bind(this)
+    //     },
+    //     init() {
+    //         this.getNode()
+    //         this.bindEvent()
+    //     }
+    // }
+    // obj.init()
+    function f(el) {
+
+        var obj = {
+            box: el.children,
+            num: null,
+            reduce: null,
+            add: null,
+            x: 0,
+            getNode() {
+                this.reduce = this.box[0]
+                this.num = this.box[1]
+                this.add = this.box[2]
+            },
+            addd() {
+                this.x++
+                if (this.x > 10) {
+                    this.x = 10
+                }
+                this.set()
+            },
+            reducee() {
+                this.x--
+                if (this.x < 0) {
+                    this.x = 0
+                }
+                this.set()
+            },
+            set() {
+                this.num.innerHTML = this.x
+            },
+            bindEvent() {
+                this.add.onclick = this.addd.bind(this)
+                this.reduce.onclick = this.reducee.bind(this)
+            },
+            init() {
+                // console.log(i);
+                this.getNode()
+                this.bindEvent()
+            }
+        }
+        obj.init()
+    }
+    var box = document.getElementsByClassName("box")
+
+    for (let i = 0; i < box.length; i++) {
+        // console.log(i);
+        f(box[i])
+    }
+
+
+</script>
+
+</html>

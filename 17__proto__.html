@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    var o1 = {
+        sex: "男"
+    }
+    var o2 = {
+        name: "李杰"
+    }
+    var o3 = {
+        age: "18"
+    }
+
+    o3.__proto__ = o2
+    o2.__proto__ = o1
+
+    console.log(o3);
+
+</script>
+
+</html>

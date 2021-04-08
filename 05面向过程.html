@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="txt">0</h1>
+    <button id="btn">+</button>
+    <button id="btn1">++</button>
+</body>
+<script>
+    // var btn = document.getElementById("btn")
+    // var btn1 = document.getElementById("btn1")
+    // btn.onclick = function () {
+    //     txt.innerHTML++
+    // }
+    // btn1.onclick = function () {
+    //     txt.innerHTML = (txt.innerHTML * 1) + 2
+    // }
+
+    var obj = {
+        txt: document.getElementById("txt"),
+        btn: document.getElementById("btn"),
+        f: function () {
+            console.log(this);
+            this.txt.innerHTML++
+        },
+        init: function () {
+            this.btn.onclick = this.f.bind(this)
+        }
+    }
+
+    obj.init()
+
+
+    btn1.onclick = function () {
+        obj.f()
+    }
+
+
+</script>
+
+</html>
